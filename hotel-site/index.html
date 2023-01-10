@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="home" class="main-header">
+        <div class="navbar">
+            <h1 class="brand">
+                <i class="fas fa-hotel"></i>
+                <span>Rita</span> Hotel
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">About</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <h1>Welcome To Rita</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, voluptatibus.</p>
+            <a href="" class="btn btn-primary">
+                <i class="fas fa-chevron-right"></i>
+                Read More</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- services -->
+        <section id="services" class="icons bg-light">
+            <div class="flex-items">
+                <div>
+                    <i class="fas fa-concierge-bell fa-3x"></i>
+                    <div>
+                        <h3>24/7 Front Desk</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolorem?
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-utensils fa-3x"></i>
+                    <div>
+                        <h3>Restaurant Bar</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolorem?
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-bus fa-3x"></i>
+                    <div>
+                        <h3>Transfer Services</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolorem?
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-spa fa-3x"></i>
+                    <div>
+                        <h3>Spa Suites</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolorem?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section id="about" class="flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="colum1">
+                        <img src="img/about1.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="colum2 bg-secondary">
+                        <h2> <b>About Us</b></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vero molestiae atque a saepe est?</p>
+                        <button class="btn btn-dark">Read more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- rooms -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+        <link href="ProfileSlider.css" rel="stylesheet">
+    
+     
+        <section class="cardss" id="rooms">
+            <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                        <div class="box1"></div>
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="img/room1.jpeg" alt="">
+                            </div>
+                            <div class="name-profession">
+                                <h2> Superior Room </h2>
+                            </div>
+                            <div class="about">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, animi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide card">
+                        <div class="box1"></div>
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="img/room2.jpeg" alt="">
+                            </div>
+
+                            <div class="name-profession">
+                                     <h2> Standart Room</h2>
+                            </div>
+                            <div class="about">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, animi.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide card">
+                        <div class="box1"></div>
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="img/room3.jpeg">
+                            </div>
+
+                            <div class="name-profession">
+                                <h2> Deluxe Room</h2>
+                            </div>
+                            <div class="about">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, animi.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <!-- contact  -->
+          <section id="contact" class="flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="colum1">
+                        <img src="img/contact.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="colum2 bg-secondary">
+                        <h2> <b>Contact Us</b></h2>
+                        <form action="" class="contact-form">
+                            <div class="form-control">
+                                <label for="name">Name</label><br>
+                                <input type="text" class="inputs"id="name">
+                            </div>
+                            <div class="form-control">
+                                <label for="name">Email</label><br>
+                                <input type="email" class="inputs"id="email">
+                            </div>
+                            <div class="form-control">
+                                <label for="name">Phone</label><br>
+                                <input type="text" class="inputs"id="phone">
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <footer class="footer bg-dark">
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+            <p>Copyright &copy 2025 - Hotel Site</p>
+        </footer>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <!-- initializing swiper slider -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              grabCursor: true,
+              autoplay: {
+                  delay: 3500,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                },
+              slidesPerGroup: 1,
+              loop: true,
+              loopFillGroupWithBlank: true,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+        </script>
+
+    </main>
+</body>
+</html>
