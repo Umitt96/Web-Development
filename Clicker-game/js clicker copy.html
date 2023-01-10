@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> 
+     body{ background-color: rgb(74,14,85);}
+     td{color: aliceblue; font-size: large; font-family:Verdana, Geneva, Tahoma, sans-serif;}
+     h2{background-color: rgb(107, 186, 255); padding: 5px;}
+     b{color: aqua; font-size: large;}
+     p{ color: white; }
+     table{padding: 15px;}
+     .value{text-align: right; width: 120px;}
+
+     button{
+      padding: 5px;
+      font-size: medium;
+     }
+     button:hover{
+      background-color: blueviolet;
+      color: #fff;
+      font-size: medium;
+     }
+     button:disabled{
+      background-color: rgb(100, 100, 100);
+      color: #000;
+      font-size: medium;
+     }
+    </style>  
+  </head>
+  <body>
+    <h2 id="asist">Satış teması</h2>
+    <script src="scriptClk.js"></script>
+    <p id="TpUrun"> toplam</p>
+    <button onclick="create()" id="Bcreate">Ürün oluştur</button>
+    <div id="business">
+      <br>
+      <b>İşletme</b>
+      <hr>
+      <table>
+        <tr>
+          <td>Kazanılan para: </td>
+          <td class="value" id="money">0 </td>
+          <td>₺</td>
+        </tr>
+        <tr style="display: none;">
+          <td>Saniye başına kazanç </td>
+          <td class="value">0 </td>
+        </tr>
+        <tr>
+          <td>Depodaki ürün sayısı: </td>
+          <td  class="value"id="urun">0</td>
+        </tr>
+        <tr>
+          <td>Ürünün tane fiyatı </td>
+          <td class="value" id="tane">0.1</td>
+          <td><button onclick="deger(+2)" id="cok">Arttır</button></td>
+          <td><button onclick="deger(-2)" id="az">Azalt</button></td>
+        </tr>
+        <tr>
+          <td> Talep yüzdesi:  </td>
+          <td class="value" id="talep">%0</td>
+        </tr>
+      </table>
+    </div>
+    <div id="Material">
+      <br>
+      <b>Malzemeler</b>
+      <hr>
+      <table>
+        <tr>
+          <td>Saniye / Üretim: </td>
+          <td class="value">100 </td>
+        </tr>
+        <tr>
+          <td>Kalan ürün: </td>
+          <td class="value" id="madde"> </td>
+          <td><button onclick="BuyMadde()" id="BbuyMat">Ürün al</button></td>
+        </tr>
+      </table>
+    </div>
+    <div id="Material">
+      <br>
+      <b>Yükseltmeler</b>
+      <hr>
+      <table>
+        <tr>
+          <td>İşçi sayısı</td>
+          <td class="value" id="worker">0</td>
+          <td><button onclick="BuyWorker()" id="workmu">Satın al</button></td>
+        </tr>
+        <tr class="asist">
+          <td>Şirket asistanı: </td>
+          <td class="value" id="automu2">Pasif</td>
+          <td><button onclick="AutoMadde()" id="automu">Satın al 20000 ₺</button></td>
+        </tr>
+      </table>
+    </div>
+    
+  
+  </body>
+</html>

@@ -1,0 +1,214 @@
+Veri hiyerarşisi
+	*Bit - en küçük bilgi 0 veya 1 lerden oluşur
+	*Karakter - 8 bitten oluşur 
+	*Alan - bir dosya içindeki ayrı ayrı veri parçalarıdır.
+	*Kayıt - alanların kapsayan kümeye kayıt denir A kaydı(adı, soyadı yaşı vs)
+	*Dosya - Kayıtlı bilgilerin tutulduğu veri topluluğudur.
+	
+
+Dosya türleri
+	*Sıralı dosyalar 
+		Bilgisayar dosyaları birbirinden bağımsız meslek dallarında kullanılmak üzere hazırlanır. İstenen dosyayı bulmak için en baştan başlayarak tarama yapılır. Bu yüzden zaman kaybına neden olur
+		
+	*İndexli dosyalar
+		Doğrudan erişim
+			Ulaşılmak istenen veriye diğer verilere bakmadan ulaşılır. Bunu mümkün kılan şey ise, kayıtları birbirinden ayıran "anahtar" tanımlayıcılarıdır.
+			
+	*Hesaba dayalı dosyalar
+		Dosyanın herhangi bir kaydına doğrudan doğruya erişebilmek için bir hesaplama algoritması kullanır.
+		
+
+Dosya sistemlerinin sakıncaları
+	*verinin tekrar etmesi
+		verideki a bilgisini güncelleyince hepsinde değişmesi gerekir
+	
+	*bellekteki veri tekrarlaması nedeniyle alan israfı 
+	
+	*Belirli bir dilin kullanılması ve bu dilin SQL kadar esnek olmaması
+
+----------------------------------
+
+Veri tabanı nedir?
+	Kullanım amacına göre düzenlenmiş veri topluluğudur
+	Bir kurluşun operasyonel verilerinin bütünüdür. bir doktor-hasta kaydından öğrenci bilgilerine kadar burada saklanır.
+	
+VTYS ise, bu verileri kontrol eden, düzenleyen yöneten birden fazla programdan oluşmuş yazılım sistemidir. 
+
+
+	VTYS nin sağladığı yararlar
+		*veri tekrarı (data redundancy)
+			Benzersiz bilgileri ayıklayarak bunu bir başlık haline getirip, tek bir kaydın bütün alanlarda zorluk çıkarmasını engeller.
+			
+		*veri tutarlılığı (d consistency)
+			a alanıundaki değişikliğin b alanında da uygulanaması
+			
+		*veri paylaşımı (d concurrency)
+			aynı veriye birçok kişinin aynı anda girebilmesi
+		
+		*veri bütünlüğü (d integrity) 
+			bir veri parçalandığında alt tabandaki veri silinince tüm kaydı silmek yerine düzenlenebilir, bu veri bütü sağlar.
+		
+		*kullanıcıya yetki verilmesi
+			verilerin korunması için yetkili biri olmalı tabii.
+
+
+Veri Modelleri
+	*sıra düzensel (hiyerarşik) model
+	
+	*ağ (network) veri modeli
+	
+	*ilişkisel veri modeli (bunu kullanacağız)
+			veriler birbirleriyle bağlantılıdır. Bu kullanıcıya kolaylık sağlar bu matekamtikteki "the relational theory" ye dayanır
+			
+			
+Varlık ilişki modeli (ER)
+	bu kavram sayesinde VTSY den veri çözümleme, modelleme ve ilişkinin tamamlanmasından sonra tekrar VTSY veri tabanı şemasına dönüştürülür
+
+	---------------------
+	|  varlık > tablo 	|
+	| öznitelik > alan 	|
+	|					|
+	---------------------
+	
+		Varlık: var olan ve ayırt edilebilen
+			*Varlık dizisi: aynı tür varlıklardan oluşan küme
+			
+		Nitelikler
+			-Bir varlık, çok sayıda nitelikle tanımlanabilir. 
+				ör/ personel (no, adı, soyadı, yaşı vs)
+				
+			*Etki alanı (domain)
+				niteliğin aldığı değerlere denir. 
+					ör/ "adı" nitelikse, "burak, ali, ayşe" onun etki alanıdır
+					
+			*rol: işçi yönetici sınıfını ayıran özellik.
+			
+			
+--------------------------------
+		Varlık eşleme  şekilleri
+			*Birden-bire 
+				bir nitelik sadece bir nitelikle eşleşebilir.
+				
+				
+			*Birden-çoğa
+				bir nitelik, birçok nitelikle eşleşebilir
+			*Çoktan-bire
+				artık anladığını düşünüyorum.
+			*Çoktan-çoğa
+				
+				
+			Varoluş koşulu -eğer x'in var olması y' ye bağlıysa x baskın varlık, y bağımlı varlıktır.
+		
+		
+		Anahtarlar
+			Kümedeki varlıkları birbirinden ayırt etmek için kullanılan varlıktır.
+			
+				Süper anahtar
+					varlığı kesin olarak tanımlayabilen anahtar öğrenci no
+					
+				Aday anahtar
+					süper anahtarın alt kümesi süper anahtar değilse aday anahtardır
+			eğer varlıklar birbirinden zor ayırt ediliyorsa zayıf, edilmiyorsa güçlü varlık kümeleridir.
+				Yabancıl anahtar 
+					bir keyi nbaşk bir yerde kullanabilme
+			
+		VARLIK İLİŞKİ ŞEMALARI
+			birden-bire tablolama
+				-bir varlık kümesinin anahtarı, diğer kümenin yabancıl anahtarı olarak belirlenir
+				
+			birden-çoğa " "
+				-ilişkinin (n) tarafındaki tabloya (1) taradındaki tablonun amahtar sütunu yanacıl anahtara olarak eklenir.
+				-tanımlayıcı nitelik varsa bunlar (n) tarafındaki tabloya sütun olarak eklenir.
+					
+			çoktan çoğa " "
+				-ilişki isminde tablo oluşturulur
+				-nitelikler ilişki tablosuna sütun olarak eklenir
+				-birincil anahtar kendi tablosuna eklenir.
+				-ilişkinin tablosu, yabancıl anahtarların birleşiminden oluşur
+				
+				
+-------------------------------------
+İLİŞKİSEL VERİ MODELLERİ	
+	İlişkisel veri tabanı içinde yer alan her bir tablo;
+		 Sütunlardan (kolonlardan) oluĢur ve Her bir sütunun ayrı bir adı vardır.
+		 Her bir sütun, aynı niteliğin tanımlandığı aynı etki alanının (domain) belirlediği değerleri içerir.
+		 Her bir satır birbirinden farklıdır.
+		 Bir iliĢkideki (tablo) niteliklerin sayısı ise o ilişkinin(tablo) derecesini(degree) gösterir.
+		
+	Veri tabanı şeması
+		fiziksel şema
+			verinin disk üzeindeki adresi ve özellikleri
+		kavramsal şema
+			kayıtlar ve dosyaların birbiriyle ilişkisi, bağlantısı mantıklsal olarak tasarımı
+				alt şemalar - kendini ilgilendiren alanlara ulaşmak için gereklki olan mantıksal alandır
+				
+	VT örneği - anlık olarak verinin herhangi bir durumu
+	
+	VT bütünlüğü - verinin doğru ve eksiksiz olması sağlanır
+		bütünlük sınırlamaları (integrity constraints)
+			
+			
+-------------------------------------
+Fonksiyonel bağımlılık
+	X in değeri Y nin farklı değerlerine karşılık geliyorsa bu fonks. bağımlılıktır
+	
+	Normalleştirme
+		*veri tabanı oluşturulurken veri kaybını, tekrarını ve yetersizliğini önleriz
+		
+		-Uygulamadan bağımsızlık
+			düzenlenen programdan bağımsız olarak verinin kaydedilmesi
+			
+			
+			
+		Normalizasyon kuralları
+			1. Normal form
+				-tablolar ilişkilendirilebilir olmalıdır.
+				-birden fazla türde bilgi tek bir sütunda olamaz
+				-Alan içindeki bilgi özel karakterlere ayrılarak tutualamaz
+				
+				normal formun sorunları
+					-satır eklerken bölümün yeniden tekrarlanması gerekir
+					-öğrenci silinince bölüm de silinir
+					-bir kayıt değişince alt kümesindeki verilerin de değişmesi gerekir
+
+			2. Normal form (güncelleme sorununa çözüm olarak)
+				-tam bağımlılık (anahtarın iki değerle bir olması) gerekir
+				
+				sorunlar 
+					-satır eklerken bölümün yeniden tekrarlanması gerekir
+					-öğrenci silinince bölüm de silinir
+		
+		
+			3. Normal form
+				anahtar olmayan alanın kendisi gibi alana bağlı olması durumu: geçişli bağımlılık
+				2 deki sorunu çözmek içöin üstteki kavramın kaldırılması gerekmektedir
+				
+			4. Normal form
+				normal bir verideki alt bilgileri değiştirmeyeyiz. Çünkü o kayıt değişmez olarak nitelendirilmiştir.
+				
+			NF: normal olmayan form
+			1NF: alan değerleri atomik ise
+			2NF: anahtar olmayan nitelikler tam bağımlı ise R nf2 de
+			3NF: anahtar olmayan nitelikler geçişsiz bağımlı ise R nf3 de
+				
+				
+------------------------------------
+İLİŞKİSEL CEBİR
+	mantık ve önermelerden veya/ve kullanımı
+	sigma, pi, x, birleşim, kesişim, bölme
+	kartezyen çarpım
+	
+	55. sayfa okuyan *pi, tüm dersler  *sigma  U=birleşim
+	pi öğrenciler, dersler(sigma bölüm=iktisat(öğrenci x dersler))
+	
+	-Küme farkı (set-difference)
+	-Kesişim (intersection)
+	-Bölme x y, y tablosundaki değeri alan veriler
+	
+	
+	
+	
+-------------------------------------
+				
+				
+	
